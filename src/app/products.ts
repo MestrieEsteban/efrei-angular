@@ -21,7 +21,7 @@ export const products = [
 			storage: "256GB",
 			price: 1000
 		},
-		picture: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-finish-select-202207-black?wid=2560&hei=1440&fmt=jpeg&qlt=95&.v=1662149951953",
+		picture: "assets/iphone-12.jpeg",
 		quantity: 0
 	},
 	{
@@ -33,7 +33,7 @@ export const products = [
 			storage: "N/A",
 			price: 200
 		},
-		picture: "https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+		picture: "assets/airpods.avif",
 		quantity: 0
 	},
 	{
@@ -45,7 +45,7 @@ export const products = [
 			storage: "512GB",
 			price: 900
 		},
-		picture: "https://images.mobilefun.co.uk/graphics/productgalleries/88255/b.jpg",
+		picture: "assets/s22.jpg",
 		quantity: 0
 	},
 	{
@@ -57,7 +57,7 @@ export const products = [
 			storage: "256GB",
 			price: 950
 		},
-		picture: "https://static.fnac-static.com/multimedia/Images/FR/MDM/2d/18/bc/12326957/1540-1/tsp20221110153910/Samsung-Galaxy-Note10-Plus-256-Go-Noir.jpg",
+		picture: "assets/n10.jpg",
 		quantity: 0
 	},
 	{
@@ -69,7 +69,7 @@ export const products = [
 			storage: "256GB",
 			price: 1300
 		},
-		picture: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-2up-starlight-220907_inline.jpg.large.jpg",
+		picture: "assets/iphone14.jpg",
 		quantity: 0
 	}
 ];

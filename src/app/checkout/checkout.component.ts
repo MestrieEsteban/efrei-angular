@@ -11,12 +11,21 @@ import { Product, products } from '../products';
 })
 export class CheckoutComponent implements OnInit {
 	products!: Product[];
+	totalPrice: number = 0;
 
 	ngOnInit(): void {
 		let actualCheckout = localStorage.getItem('checkout')
 		if (actualCheckout) {
 			this.products = JSON.parse(actualCheckout);
+			this.updateTotalPrice();
 		}
+	}
+	updateTotalPrice() {
+		this.totalPrice = 0;
+		this.products.forEach((product) => {
+			this.totalPrice += product.specifications.price * product.quantity;
+		}
+		);
 	}
 	addQuantity(product: Product) {
 		//search for the product in the checkout
@@ -24,8 +33,9 @@ export class CheckoutComponent implements OnInit {
 		if (index !== -1) {
 			this.products[index].quantity++;
 		}
-		//update the checkout
+		//update the checkout and the total price
 		localStorage.setItem('checkout', JSON.stringify(this.products));
+		this.updateTotalPrice();
 	}
 	removeQuantity(product: Product) {
 		//search for the product in the checkout
@@ -38,13 +48,15 @@ export class CheckoutComponent implements OnInit {
 				this.products.splice(index, 1);
 			}
 		}
-		//update the checkout
+		//update the checkout and the total price
 		localStorage.setItem('checkout', JSON.stringify(this.products));
+		this.updateTotalPrice();
 		if (this.products.length === 0) {
 			localStorage.removeItem('checkout');
+			this.router.navigate(['/']);
 		}
 	}
+	constructor(private route: ActivatedRoute, private router: Router ) { }
 
-	constructor(private route: ActivatedRoute) { }
 
 }
